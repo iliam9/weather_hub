@@ -4,6 +4,7 @@ import com.i.weather_hub.dto.WeatherResponseDto;
 import com.i.weather_hub.service.WeatherApiService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,5 +29,9 @@ public class WeatherController {
         response.put("humidity", weatherData.getMain().getHumidity() + "%");
 
         return response;
+    }
+    @GetMapping("/test")
+    public String test() {
+        return "Service is working! Time: " + new Date();
     }
 }
